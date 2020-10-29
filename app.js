@@ -91,8 +91,12 @@ class Car {
         this.make = make;
         this.model = model;
         this.color = color;
+        this.hello = function() {
+            console.log(`My car is a ${this.make}.`);
+        }
     }
 }
 
 const myCar = new Car('Toyota', 'Corolla', 'silver');
 console.log(myCar);
+myCar.hello();
