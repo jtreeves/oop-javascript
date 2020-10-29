@@ -56,15 +56,43 @@ const brother = new Human('Graham', 'Reeves')
 console.log(brother.firstName)
 // output: 'Graham'
 
-function Car(make, model, color) {
-    this.make = make;
-    this.model = model;
-    this.color = color;
+// function Car(make, model, color) {
+//     this.make = make;
+//     this.model = model;
+//     this.color = color;
+// };
+
+// const myCar = new Car('Toyota', 'Corolla', 'silver');
+// const fancyCar = new Car('BMW', '3 Series', 'red');
+// const oldCar = new Car('Honda', 'Civic', 'black');
+// console.log(myCar);
+// console.log(fancyCar);
+// console.log(oldCar);
+
+function User(name, email) {
+    this.name = name;
+    this.email = email;
+    this.admin = true;
+}
+
+const myself = new User('Jackson', 'jr@gmail.com');
+// Allows you to change the value of admin, which was automatically true upon initialization:
+myself.admin = false;
+
+// Allows you to add more features to the constructor, like a function (method):
+User.prototype.hello = function() {
+    console.log('Hello');
 };
 
+myself.hello();
+
+class Car {
+    constructor(make, model, color) {
+        this.make = make;
+        this.model = model;
+        this.color = color;
+    }
+}
+
 const myCar = new Car('Toyota', 'Corolla', 'silver');
-const fancyCar = new Car('BMW', '3 Series', 'red');
-const oldCar = new Car('Honda', 'Civic', 'black');
 console.log(myCar);
-console.log(fancyCar);
-console.log(oldCar);
